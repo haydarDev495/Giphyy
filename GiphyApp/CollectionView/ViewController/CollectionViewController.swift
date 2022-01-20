@@ -13,23 +13,40 @@ class CollectionViewController: UIViewController {
     @IBOutlet weak var myCollectionView: UICollectionView!
     
     // searchController
-    let searchController = UISearchController()
+    private let searchController = UISearchController(searchResultsController: nil)
+    
+    // Data
+    private var filteredGifs = [Gif]()
+    
+    private let gif =  [
+        Gif(nameGif: "Hello", type: .nameGiff),
+        Gif(nameGif: "Mem", type: .nameGiff),
+        Gif(nameGif: "Smile", type: .nameGiff),
+        Gif(nameGif: "Fun", type: .nameGiff),
+        Gif(nameGif: "MisterBin", type: .nameGiff),
+        Gif(nameGif: "Jog", type: .nameGiff),
+        Gif(nameGif: "Run", type: .nameGiff),
+        Gif(nameGif: "Video", type: .nameGiff),
+        Gif(nameGif: "Sport", type: .nameGiff),
+        Gif(nameGif: "Magic", type: .nameGiff),
+        Gif(nameGif: "Comedy", type: .nameGiff),
+        Gif(nameGif: "Joker", type: .nameGiff)]
+    
+    private var searchBarIsEmpty: Bool {
+        guard let text = searchController.searchBar.text else { return false }
+        return text.isEmpty
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         configure()
         
-        
-        
     }
-    
-    
 }
 
 // MARK:
-// MARK: configure
+// MARK: - configure
 extension CollectionViewController {
     func configure() {
         configureTitle()
@@ -47,32 +64,42 @@ extension CollectionViewController {
     func configureSearchController() {
         navigationItem.searchController = searchController
         searchController.searchResultsUpdater = self
-
+        searchController.searchBar.placeholder = "Search"
+        // Setup the Search Controller
+        searchController.obscuresBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        
+        
+        
     }
-
+    
 }
 // MARK:
-// MARK:
+// MARK: - UISearchResultsUpdating Delegate
 extension CollectionViewController : UISearchResultsUpdating {
+    
     func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text else {
             return
         }
         print(text)
     }
-    
+
     
 }
 
 // MARK:
-// MARK: UICollectionViewDataSource
+// MARK: - UICollectionViewDataSource
 extension CollectionViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
+        return gif.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = myCollectionView.dequeueReusableCell(withReuseIdentifier: "MyCollectionViewCell", for: indexPath) as! MyCollectionViewCell
+        cell.myLabel.text = gif[indexPath.row].nameGif
+        cell.myLabel.layer.cornerRadius = 50
+        
         return cell
     }
     
@@ -80,7 +107,7 @@ extension CollectionViewController : UICollectionViewDataSource {
 }
 
 // MARK:
-// MARK: UICollectionViewDelegate
+// MARK: - UICollectionViewDelegate
 extension CollectionViewController : UICollectionViewDelegate , UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 200, height: 200)
