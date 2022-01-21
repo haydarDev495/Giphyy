@@ -16,21 +16,9 @@ class CollectionViewController: UIViewController {
     private let searchController = UISearchController(searchResultsController: nil)
     
     // Data
-    var data = ""
+    var filteretData : [String]!
     
-    private let gif =  [
-        Gif(nameGif: "Hello"),
-        Gif(nameGif: "Mem"),
-        Gif(nameGif: "Smile"),
-        Gif(nameGif: "Fun"),
-        Gif(nameGif: "MisterBin"),
-        Gif(nameGif: "Jog"),
-        Gif(nameGif: "Run"),
-        Gif(nameGif: "Video"),
-        Gif(nameGif: "Sport"),
-        Gif(nameGif: "Magic"),
-        Gif(nameGif: "Comedy"),
-        Gif(nameGif: "Joker")]
+    private let gif = ["Hello","Mem","Smile","Fun","MisterBin","Jog","Run","Video","Sport","Magic","Comedy","Joker"]
     
     private var searchBarIsEmpty: Bool {
         guard let text = searchController.searchBar.text else { return false }
@@ -39,6 +27,7 @@ class CollectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        filteretData = gif
         
         configure()
         
@@ -68,6 +57,8 @@ extension CollectionViewController {
         // Setup the Search Controller
         searchController.obscuresBackgroundDuringPresentation = false
         definesPresentationContext = true
+        searchController.delegate = self
+        
         
         
         
@@ -76,13 +67,25 @@ extension CollectionViewController {
 }
 // MARK:
 // MARK: - UISearchResultsUpdating Delegate
-extension CollectionViewController : UISearchResultsUpdating {
+extension CollectionViewController : UISearchResultsUpdating , UISearchBarDelegate , UISearchControllerDelegate {
     
     func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text else {
             return
         }
         print(text)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteretData = []
+        
+        for gifData in gif {
+            if gifData.lowercased().contains(searchText.lowercased()) {
+                filteretData.append(gifData)
+                myCollectionView.reloadData()
+
+            }
+        }
     }
 
     
@@ -97,7 +100,7 @@ extension CollectionViewController : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = myCollectionView.dequeueReusableCell(withReuseIdentifier: "MyCollectionViewCell", for: indexPath) as! MyCollectionViewCell
-        cell.myLabel.text = gif[indexPath.row].nameGif
+        cell.myLabel.text = gif[indexPath.row]
         cell.myLabel.layer.cornerRadius = 50
         
         return cell
