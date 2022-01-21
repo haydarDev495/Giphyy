@@ -16,21 +16,21 @@ class CollectionViewController: UIViewController {
     private let searchController = UISearchController(searchResultsController: nil)
     
     // Data
-    private var filteredGifs = [Gif]()
+    var data = ""
     
     private let gif =  [
-        Gif(nameGif: "Hello", type: .nameGiff),
-        Gif(nameGif: "Mem", type: .nameGiff),
-        Gif(nameGif: "Smile", type: .nameGiff),
-        Gif(nameGif: "Fun", type: .nameGiff),
-        Gif(nameGif: "MisterBin", type: .nameGiff),
-        Gif(nameGif: "Jog", type: .nameGiff),
-        Gif(nameGif: "Run", type: .nameGiff),
-        Gif(nameGif: "Video", type: .nameGiff),
-        Gif(nameGif: "Sport", type: .nameGiff),
-        Gif(nameGif: "Magic", type: .nameGiff),
-        Gif(nameGif: "Comedy", type: .nameGiff),
-        Gif(nameGif: "Joker", type: .nameGiff)]
+        Gif(nameGif: "Hello"),
+        Gif(nameGif: "Mem"),
+        Gif(nameGif: "Smile"),
+        Gif(nameGif: "Fun"),
+        Gif(nameGif: "MisterBin"),
+        Gif(nameGif: "Jog"),
+        Gif(nameGif: "Run"),
+        Gif(nameGif: "Video"),
+        Gif(nameGif: "Sport"),
+        Gif(nameGif: "Magic"),
+        Gif(nameGif: "Comedy"),
+        Gif(nameGif: "Joker")]
     
     private var searchBarIsEmpty: Bool {
         guard let text = searchController.searchBar.text else { return false }

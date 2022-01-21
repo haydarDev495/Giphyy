@@ -9,8 +9,5 @@ import Foundation
 
 struct Gif {
     var nameGif : String
-    var type : nameType
 }
-enum nameType {
-    case nameGiff
-}
+
