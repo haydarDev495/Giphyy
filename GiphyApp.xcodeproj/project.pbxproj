@@ -14,7 +14,7 @@
 		0DF878C1279963C500A1BFD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DF878C0279963C500A1BFD8 /* Assets.xcassets */; };
 		0DF878C4279963C500A1BFD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DF878C2279963C500A1BFD8 /* LaunchScreen.storyboard */; };
 		0DF878D427999A8C00A1BFD8 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF878D327999A8C00A1BFD8 /* MyCollectionViewCell.swift */; };
-		0DF878D62799ABEF00A1BFD8 /* Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF878D52799ABEF00A1BFD8 /* Gif.swift */; };
+		0DF878D62799ABEF00A1BFD8 /* CarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF878D52799ABEF00A1BFD8 /* CarModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		0DF878C3279963C500A1BFD8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0DF878C5279963C500A1BFD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DF878D327999A8C00A1BFD8 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
-		0DF878D52799ABEF00A1BFD8 /* Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gif.swift; sourceTree = "<group>"; };
+		0DF878D52799ABEF00A1BFD8 /* CarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				0DF878BB279963B800A1BFD8 /* CollectionViewController.swift */,
-				0DF878D52799ABEF00A1BFD8 /* Gif.swift */,
+				0DF878D52799ABEF00A1BFD8 /* CarModel.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -180,7 +180,7 @@
 				0DF878B8279963B800A1BFD8 /* AppDelegate.swift in Sources */,
 				0DF878D427999A8C00A1BFD8 /* MyCollectionViewCell.swift in Sources */,
 				0DF878BA279963B800A1BFD8 /* SceneDelegate.swift in Sources */,
-				0DF878D62799ABEF00A1BFD8 /* Gif.swift in Sources */,
+				0DF878D62799ABEF00A1BFD8 /* CarModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
