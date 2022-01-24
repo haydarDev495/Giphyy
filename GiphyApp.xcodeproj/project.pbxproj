@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D980A5A279ED45D00371DDD /* gifToImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D980A59279ED45D00371DDD /* gifToImage.swift */; };
+		0D980A5C279ED62100371DDD /* my.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0D980A5B279ED62100371DDD /* my.gif */; };
 		0DF878B8279963B800A1BFD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF878B7279963B800A1BFD8 /* AppDelegate.swift */; };
 		0DF878BA279963B800A1BFD8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF878B9279963B800A1BFD8 /* SceneDelegate.swift */; };
 		0DF878BC279963B800A1BFD8 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF878BB279963B800A1BFD8 /* CollectionViewController.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D980A59279ED45D00371DDD /* gifToImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gifToImage.swift; sourceTree = "<group>"; };
+		0D980A5B279ED62100371DDD /* my.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = my.gif; path = ../../../../../../../Downloads/my.gif; sourceTree = "<group>"; };
 		0DF878B4279963B800A1BFD8 /* GiphyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GiphyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DF878B7279963B800A1BFD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DF878B9279963B800A1BFD8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,12 +64,14 @@
 		0DF878B6279963B800A1BFD8 /* GiphyApp */ = {
 			isa = PBXGroup;
 			children = (
+				0D980A5B279ED62100371DDD /* my.gif */,
 				0DF878B7279963B800A1BFD8 /* AppDelegate.swift */,
 				0DF878B9279963B800A1BFD8 /* SceneDelegate.swift */,
 				0DF878CB279967A400A1BFD8 /* CollectionView */,
 				0DF878C0279963C500A1BFD8 /* Assets.xcassets */,
 				0DF878C2279963C500A1BFD8 /* LaunchScreen.storyboard */,
 				0DF878C5279963C500A1BFD8 /* Info.plist */,
+				0D980A59279ED45D00371DDD /* gifToImage.swift */,
 			);
 			path = GiphyApp;
 			sourceTree = "<group>";
@@ -163,6 +169,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D980A5C279ED62100371DDD /* my.gif in Resources */,
 				0DF878C4279963C500A1BFD8 /* LaunchScreen.storyboard in Resources */,
 				0DF878C1279963C500A1BFD8 /* Assets.xcassets in Resources */,
 				0DF878BF279963B800A1BFD8 /* Main.storyboard in Resources */,
@@ -181,6 +188,7 @@
 				0DF878D427999A8C00A1BFD8 /* MyCollectionViewCell.swift in Sources */,
 				0DF878BA279963B800A1BFD8 /* SceneDelegate.swift in Sources */,
 				0DF878D62799ABEF00A1BFD8 /* CarModel.swift in Sources */,
+				0D980A5A279ED45D00371DDD /* gifToImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,16 +17,14 @@ class CollectionViewController: UIViewController {
     
     // Data
     private var gifImageItemList = [CarModel]()
-    
     var searching = false
-    
     var searcedItem = [CarModel]()
-    
-    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
         
         configure()
         fillData()
@@ -80,9 +78,7 @@ class CollectionViewController: UIViewController {
 extension CollectionViewController : UISearchResultsUpdating , UISearchBarDelegate , UISearchControllerDelegate {
     
     func updateSearchResults(for searchController: UISearchController) {
-        
-        
-        let searchText = searchController.searchBar.text!
+        guard let searchText = searchController.searchBar.text else { return }
         if !searchText.isEmpty {
             
             searching = true
@@ -114,37 +110,46 @@ extension CollectionViewController : UISearchResultsUpdating , UISearchBarDelega
     
 }
 
-
-
 // MARK:
 // MARK: - UICollectionViewDataSource
 extension CollectionViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if searching {
-            return searcedItem.count
-        } else {
-            return gifImageItemList.count
-        }
+//        if searching {
+//            return searcedItem.count
+//        } else {
+//            return gifImageItemList.count
+//        }
+        return 20
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = myCollectionView.dequeueReusableCell(withReuseIdentifier: "MyCollectionViewCell", for: indexPath) as! MyCollectionViewCell
         
-        if searching {
-            cell.myImage.image = UIImage(named: searcedItem[indexPath.row].nameImage)
-            cell.myLabel.text = searcedItem[indexPath.row].nameCar
-            
-            
-        } else {
-            cell.myImage.image = UIImage(named: gifImageItemList[indexPath.row].nameImage)
-            cell.myLabel.text = gifImageItemList[indexPath.row].nameCar
-        }
+        
+        cell.myImage.image = UIImage.gif(name: "my")
+//        let imageView = UIImageView(image: jeremyGif)
+//        imageView.frame = CGRect(x: 20.0, y: 50.0, width: self.view.frame.size.width - 40, height: 150.0)
+//
+//        view.addSubview(imageView)
+//        if searching {
+//            cell.myImage.image = UIImage(named: searcedItem[indexPath.row].nameImage)
+//            cell.myLabel.text = searcedItem[indexPath.row].nameCar
+//
+//
+//        } else {
+//            cell.myImage.image = UIImage(named: gifImageItemList[indexPath.row].nameImage)
+//            cell.myLabel.text = gifImageItemList[indexPath.row].nameCar
+//        }
+        
         cell.layer.borderWidth = 3
         cell.layer.borderColor = UIColor.red.cgColor
         return cell
         
     }
 }
+
+
+
 
 
 
