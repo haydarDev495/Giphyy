@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import SwiftGifOrigin
+import Kingfisher
 
 class CollectionViewController: UIViewController {
     
@@ -25,6 +27,7 @@ class CollectionViewController: UIViewController {
         super.viewDidLoad()
         
 
+        
         
         configure()
         fillData()
@@ -114,23 +117,21 @@ extension CollectionViewController : UISearchResultsUpdating , UISearchBarDelega
 // MARK: - UICollectionViewDataSource
 extension CollectionViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        if searching {
-//            return searcedItem.count
-//        } else {
-//            return gifImageItemList.count
-//        }
-        return 20
+        if searching {
+            return searcedItem.count
+        } else {
+            return gifImageItemList.count
+        }
+
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = myCollectionView.dequeueReusableCell(withReuseIdentifier: "MyCollectionViewCell", for: indexPath) as! MyCollectionViewCell
         
-        
-        cell.myImage.image = UIImage.gif(name: "my")
-//        let imageView = UIImageView(image: jeremyGif)
-//        imageView.frame = CGRect(x: 20.0, y: 50.0, width: self.view.frame.size.width - 40, height: 150.0)
-//
-//        view.addSubview(imageView)
+
+
+        let url = URL(string: "https://media.giphy.com/media/BElb9DVpHezcZufOhl/giphy.gif")
+        cell.myImage.kf.setImage(with: url)
 //        if searching {
 //            cell.myImage.image = UIImage(named: searcedItem[indexPath.row].nameImage)
 //            cell.myLabel.text = searcedItem[indexPath.row].nameCar
