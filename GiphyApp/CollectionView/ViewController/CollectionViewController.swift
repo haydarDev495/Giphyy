@@ -20,7 +20,7 @@ class CollectionViewController: UIViewController {
     // Data
     //    private var gifImageItemList = [CarModel]()
     var searching = false
-    var searcedItem : [String] = []
+//    var searcedItem : [String] = []
     var allGifsArray : [String] = []
     
     
@@ -39,8 +39,7 @@ extension CollectionViewController {
     func getUrl(searchQuery: String) {
         
         print(searchQuery)
-        
-        guard let url = URL(string: "https://api.giphy.com/v1/gifs/search?q=\(searchQuery)&api_key=QqT3x9hCgbk6QTSQtoNeoNw3Y0gJvSyG&limit=3") else { return }
+        guard let url = URL(string: "https://api.giphy.com/v1/gifs/search?q=\(searchQuery)&api_key=QqT3x9hCgbk6QTSQtoNeoNw3Y0gJvSyG&limit=30") else { return }
         
         let session = URLSession.shared.dataTask(with: url) { [self] data, response, error in
             guard let data = data else { return }
@@ -127,26 +126,28 @@ extension CollectionViewController : UISearchResultsUpdating , UISearchBarDelega
         if !searchText.isEmpty {
             
             searching = true
-            searcedItem.removeAll()
-            for item in allGifsArray {
-                if item.lowercased().contains(searchText.lowercased()) {
-                    searcedItem.append(item)
-                }
-            }
+//            searcedItem.removeAll()
+//            for item in allGifsArray {
+//                if item.lowercased().contains(searchText.lowercased()) {
+//                    searcedItem.append(item)
+//                }
+//            }
             
         } else {
             searching = false
-            searcedItem.removeAll()
-            searcedItem = allGifsArray
+//            searcedItem.removeAll()
+//            searcedItem = allGifsArray
         }
         self.myCollectionView.reloadData()
         
     }
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searching = false
-        searcedItem.removeAll()
+//        searcedItem.removeAll()
         allGifsArray.removeAll()
         myCollectionView.reloadData()
+
+
     }
     
 }
@@ -170,23 +171,25 @@ extension CollectionViewController {
         title = "Search"
     }
     func configureSearchController() {
+        searchController.loadViewIfNeeded()
         searchController.searchResultsUpdater = self
         searchController.searchBar.placeholder = "Search"
         // Setup the Search Controller
         searchController.obscuresBackgroundDuringPresentation = false
         definesPresentationContext = true
         searchController.delegate = self
+        searchController.searchBar.delegate = self
+        searchController.searchBar.enablesReturnKeyAutomatically = false
+        searchController.searchBar.returnKeyType = UIReturnKeyType.done
+        navigationItem.hidesSearchBarWhenScrolling = false
         navigationItem.searchController = searchController
+
+
+
+
+
+
         
-        /*        searchController.loadViewIfNeeded()
-         searchController.searchResultsUpdater = self
-         searchController.searchBar.delegate = self
-         searchController.obscuresBackgroundDuringPresentation = false
-         searchController.searchBar.enablesReturnKeyAutomatically = false
-         searchController.searchBar.returnKeyType = UIReturnKeyType.done
-         navigationItem.hidesSearchBarWhenScrolling = false
-         navigationItem.searchController = searchController
-         definesPresentationContext = true*/
     }
 }
 
