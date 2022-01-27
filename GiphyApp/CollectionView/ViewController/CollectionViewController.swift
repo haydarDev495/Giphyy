@@ -18,18 +18,16 @@ class CollectionViewController: UIViewController {
     private let searchController = UISearchController(searchResultsController: nil)
     
     // Data
-    private var gifImageItemList = [CarModel]()
+    //    private var gifImageItemList = [CarModel]()
     var searching = false
-    var searcedItem = [CarModel]()
-    var aaa : [String] = []
+    var searcedItem : [String] = []
+    var allGifsArray : [String] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getUrl(searchQuery: "cat")
         configure()
-        fillData()
         
     }
     
@@ -39,78 +37,71 @@ class CollectionViewController: UIViewController {
 extension CollectionViewController {
     
     func getUrl(searchQuery: String) {
-        guard let url = URL(string: "https://api.giphy.com/v1/gifs/search?q=\(searchQuery)&api_key=QqT3x9hCgbk6QTSQtoNeoNw3Y0gJvSyG&limit=25")
-        else { return }
         
-        let session = URLSession.shared
+        print(searchQuery)
         
-        session.dataTask(with: url) { [self] data, response, error in
-            debugPrint("-------dataTask: \(error)")
-            if let data = data , let gif = try? JSONDecoder().decode(GIf.self, from: data) {
-                for i in gif.data {
-                    aaa.append(i.images.original.url)
-                    print("print array : aaa url \(aaa)")
+        guard let url = URL(string: "https://api.giphy.com/v1/gifs/search?q=\(searchQuery)&api_key=QqT3x9hCgbk6QTSQtoNeoNw3Y0gJvSyG&limit=3") else { return }
+        
+        let session = URLSession.shared.dataTask(with: url) { [self] data, response, error in
+            guard let data = data else { return }
+            
+            do {
+                let json = try JSONDecoder().decode(GIf.self, from: data)
+                for i in json.data {
+                    allGifsArray.append(i.images.original.url)
                 }
                 
-//                aaa = gif.data[0].images.original.url
                 DispatchQueue.main.async {
-//                    debugPrint("-------realoadData: \(aaa)")
                     self.myCollectionView.reloadData()
                 }
-            } else {
-                debugPrint("----- else ")
+                
+            } catch {
+                debugPrint("catch -- - - - --  \(error)")
             }
-            
         }.resume()
+
+
+
+            
+        }
     }
-}
+
 
 // MARK:
 // MARK: - UICollectionViewDataSource
 extension CollectionViewController : UICollectionViewDataSource {
     
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        if searching {
-//            return searcedItem.count
-//        } else {
-//            return gifImageItemList.count
-//        }
-        return 25
+        //        if searching {
+        //            return 3
+        ////            return searcedItem.count + 15
+        //        } else {
+        //            return allGifsArray.count
+        //        }
+        return allGifsArray.count
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = myCollectionView.dequeueReusableCell(withReuseIdentifier: "MyCollectionViewCell", for: indexPath) as! MyCollectionViewCell
         
-        let url = URL(string: "https://media0.giphy.com/media/n6tO6fmib12WTAKN6d/giphy.gif?cid=f0bea9e2d316957e4f9afa00eaa1d0b2c46e7e0cf6d2cef8&rid=giphy.gif")
-        
-        print(aaa)
-        //        print(ur)
-//        if indexPath.row % 2 == 0 {
-//            debugPrint("-------aaa: \(aaa)")
-//        cell.myImage.image = UIImage.gif(url: aaa.replaceSubrange(<#T##Range<String.Index>#>, with: <#T##C#>))
-//        } else {
-//            cell.myImage.kf.setImage(with: url)
-//        }
-//        cell.myImage.kf.setImage(with: URL(string: aaa))
-        
-        if aaa.isEmpty {
+        if allGifsArray.isEmpty {
             print("g")
         } else {
-            cell.myImage.kf.setImage(with: URL(string: aaa[indexPath.row]))
-
+            cell.myImage.kf.setImage(with: URL(string: allGifsArray[indexPath.row]))
+            
         }
         
-        
-        
         if searching {
-            //            cell.myImage.image = UIImage(named: searcedItem[indexPath.row].nameImage)
-//            cell.myLabel.text = searcedItem[indexPath.row].nameCar
+            //                        cell.myImage.image = UIImage(named: searcedItem[indexPath.row].nameImage)
+            //            cell.myLabel.text = searcedItem[indexPath.row].nameCar
             
             
         } else {
             //            cell.myImage.image = UIImage(named: gifImageItemList[indexPath.row].nameImage)
-//            cell.myLabel.text = gifImageItemList[indexPath.row].nameCar
+            //            cell.myLabel.text = gifImageItemList[indexPath.row].nameCar
+            
+            
         }
         
         cell.layer.borderWidth = 3
@@ -121,23 +112,24 @@ extension CollectionViewController : UICollectionViewDataSource {
 }
 
 
-
-
-
-
-
 // MARK:
 // MARK: - UISearchResultsUpdating Delegate
 extension CollectionViewController : UISearchResultsUpdating , UISearchBarDelegate , UISearchControllerDelegate {
     
     func updateSearchResults(for searchController: UISearchController) {
+        
         guard let searchText = searchController.searchBar.text else { return }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [self] in
+            getUrl(searchQuery: searchText)
+        }
+        
         if !searchText.isEmpty {
             
             searching = true
             searcedItem.removeAll()
-            for item in gifImageItemList {
-                if item.nameCar.lowercased().contains(searchText.lowercased()) {
+            for item in allGifsArray {
+                if item.lowercased().contains(searchText.lowercased()) {
                     searcedItem.append(item)
                 }
             }
@@ -145,34 +137,19 @@ extension CollectionViewController : UISearchResultsUpdating , UISearchBarDelega
         } else {
             searching = false
             searcedItem.removeAll()
-            searcedItem = gifImageItemList
+            searcedItem = allGifsArray
         }
         self.myCollectionView.reloadData()
-        
-        //        guard let text = searchController.searchBar.text else {
-        //            return
-        //        }
-        //        print(text)
         
     }
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searching = false
         searcedItem.removeAll()
+        allGifsArray.removeAll()
         myCollectionView.reloadData()
     }
     
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -214,59 +191,18 @@ extension CollectionViewController {
 }
 
 
-
-extension CollectionViewController {
-    private func fillData() {
-//        let item1 = CarModel(nameImage: "audiBlue", nameCar: "Auid")
-//        gifImageItemList.append(item1)
-//        let item2 = CarModel(nameImage: "audiRed", nameCar: "Auid")
-//        gifImageItemList.append(item2)
-//        let item3 = CarModel(nameImage: "bbmwe39", nameCar: "BMW")
-//        gifImageItemList.append(item3)
-//        let item4 = CarModel(nameImage: "bmwM5", nameCar: "BMW")
-//        gifImageItemList.append(item4)
-//        let item5 = CarModel(nameImage: "bmwM5Black", nameCar: "BMW")
-//        gifImageItemList.append(item5)
-//        let item6 = CarModel(nameImage: "E63AMG", nameCar: "Mercedes")
-//        gifImageItemList.append(item6)
-//        let item7 = CarModel(nameImage: "e63Red", nameCar: "Mercedes")
-//        gifImageItemList.append(item7)
-//        let item8 = CarModel(nameImage: "ford", nameCar: "Ford")
-//        gifImageItemList.append(item8)
-//        let item9 = CarModel(nameImage: "mercedes", nameCar: "Mercedes")
-//        gifImageItemList.append(item9)
-//        let item10 = CarModel(nameImage: "mercedesBlack", nameCar: "Mercedes")
-//        gifImageItemList.append(item10)
-//        let item11 = CarModel(nameImage: "mercedesRed", nameCar: "Mercedes")
-//        gifImageItemList.append(item11)
-//        let item12 = CarModel(nameImage: "mercedesTwo", nameCar: "Mercedes")
-//        gifImageItemList.append(item12)
-//        let item13 = CarModel(nameImage: "mercedesWhite", nameCar: "Mercedes")
-//        gifImageItemList.append(item13)
-//        let item14 = CarModel(nameImage: "supra", nameCar: "Toyota supra")
-//        gifImageItemList.append(item14)
-//        let item15 = CarModel(nameImage: "tesla", nameCar: "Tesla")
-//        gifImageItemList.append(item15)
-        
-        
-    }
-}
-
-
-
 // MARK:
 // MARK: - UICollectionViewDelegate
 extension CollectionViewController : UICollectionViewDelegate , UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 200, height: 200)
+        return CGSize(width: 300 , height: 300)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        if searching {
-//            print("you have clicked on car \(searcedItem[indexPath.row].nameCar)")
-//
-//        }else {
-//            print("you have clicked on car \(gifImageItemList[indexPath.row].nameCar)")
-//        }
+        //        if searching {
+        //            print("you have clicked on car \(searcedItem[indexPath.row].nameCar)")
+        //
+        //        }else {
+        //            print("you have clicked on car \(gifImageItemList[indexPath.row].nameCar)")
+        //        }
     }
 }
-
