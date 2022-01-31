@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0D112AC027A035EE005671FE /* Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D112ABF27A035ED005671FE /* Gif.swift */; };
+		0D3CF91127A3FBE700EE2BD4 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3CF91027A3FBE700EE2BD4 /* CollectionView.swift */; };
+		0DD950BD27A8382C00A398E9 /* Configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD950BC27A8382C00A398E9 /* Configure.swift */; };
+		0DD950BF27A8387A00A398E9 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD950BE27A8387A00A398E9 /* SearchController.swift */; };
+		0DD950C127A8396800A398E9 /* GetURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD950C027A8396800A398E9 /* GetURL.swift */; };
 		0DF878B8279963B800A1BFD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF878B7279963B800A1BFD8 /* AppDelegate.swift */; };
 		0DF878BA279963B800A1BFD8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF878B9279963B800A1BFD8 /* SceneDelegate.swift */; };
 		0DF878BC279963B800A1BFD8 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF878BB279963B800A1BFD8 /* CollectionViewController.swift */; };
@@ -20,6 +24,10 @@
 
 /* Begin PBXFileReference section */
 		0D112ABF27A035ED005671FE /* Gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gif.swift; sourceTree = "<group>"; };
+		0D3CF91027A3FBE700EE2BD4 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		0DD950BC27A8382C00A398E9 /* Configure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configure.swift; sourceTree = "<group>"; };
+		0DD950BE27A8387A00A398E9 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		0DD950C027A8396800A398E9 /* GetURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetURL.swift; sourceTree = "<group>"; };
 		0DF878B4279963B800A1BFD8 /* GiphyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GiphyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DF878B7279963B800A1BFD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DF878B9279963B800A1BFD8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +54,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D3CF90E27A3FBBC00EE2BD4 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				0D3CF90F27A3FBC800EE2BD4 /* collection View */,
+			);
+			path = extension;
+			sourceTree = "<group>";
+		};
+		0D3CF90F27A3FBC800EE2BD4 /* collection View */ = {
+			isa = PBXGroup;
+			children = (
+				0D3CF91027A3FBE700EE2BD4 /* CollectionView.swift */,
+				0DD950BC27A8382C00A398E9 /* Configure.swift */,
+				0DD950BE27A8387A00A398E9 /* SearchController.swift */,
+				0DD950C027A8396800A398E9 /* GetURL.swift */,
+			);
+			path = "collection View";
+			sourceTree = "<group>";
+		};
 		0DF878AB279963B800A1BFD8 = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +127,7 @@
 			children = (
 				0DF878BB279963B800A1BFD8 /* CollectionViewController.swift */,
 				0D112ABF27A035ED005671FE /* Gif.swift */,
+				0D3CF90E27A3FBBC00EE2BD4 /* extension */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -244,7 +272,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D3CF91127A3FBE700EE2BD4 /* CollectionView.swift in Sources */,
+				0DD950C127A8396800A398E9 /* GetURL.swift in Sources */,
 				0DF878BC279963B800A1BFD8 /* CollectionViewController.swift in Sources */,
+				0DD950BD27A8382C00A398E9 /* Configure.swift in Sources */,
+				0DD950BF27A8387A00A398E9 /* SearchController.swift in Sources */,
 				0DF878B8279963B800A1BFD8 /* AppDelegate.swift in Sources */,
 				0D112AC027A035EE005671FE /* Gif.swift in Sources */,
 				0DF878D427999A8C00A1BFD8 /* MyCollectionViewCell.swift in Sources */,
