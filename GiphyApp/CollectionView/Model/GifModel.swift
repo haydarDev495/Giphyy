@@ -6,7 +6,7 @@
 import Foundation
 
 // MARK: - GIf
-struct GIf: Codable {
+struct GIfModel: Codable {
     let data: [Datum]
     let meta: Meta
     let pagination: Pagination
