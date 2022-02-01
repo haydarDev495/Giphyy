@@ -35,9 +35,9 @@ extension CollectionViewController {
         searchController.loadViewIfNeeded()
         searchController.searchResultsUpdater = self
         searchController.searchBar.placeholder = "Search"
-        searchController.searchBar.tintColor = .white
-        searchController.searchBar.backgroundColor = .gray
-        searchController.searchBar.barTintColor = .white
+        searchController.searchBar.tintColor = .black
+        searchController.searchBar.backgroundColor = .white
+        searchController.searchBar.barTintColor = .black
         // Setup the Search Controller
         searchController.obscuresBackgroundDuringPresentation = false
         definesPresentationContext = true
