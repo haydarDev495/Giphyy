@@ -20,6 +20,7 @@ extension CollectionViewController {
     }
     func configureTitle() {
         title = "Search"
+        
     }
     func configureCollectionView() {
         myCollectionView.delegate = self
@@ -34,6 +35,9 @@ extension CollectionViewController {
         searchController.loadViewIfNeeded()
         searchController.searchResultsUpdater = self
         searchController.searchBar.placeholder = "Search"
+        searchController.searchBar.tintColor = .white
+        searchController.searchBar.backgroundColor = .gray
+        searchController.searchBar.barTintColor = .white
         // Setup the Search Controller
         searchController.obscuresBackgroundDuringPresentation = false
         definesPresentationContext = true

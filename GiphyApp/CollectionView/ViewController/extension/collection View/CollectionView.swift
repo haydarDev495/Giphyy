@@ -25,7 +25,7 @@ extension CollectionViewController : UICollectionViewDataSource {
         }
         
         cell.layer.borderWidth = 3
-        cell.layer.borderColor = UIColor.red.cgColor
+        cell.layer.borderColor = UIColor.white.cgColor
         return cell
         
     }
@@ -34,10 +34,17 @@ extension CollectionViewController : UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegate
 extension CollectionViewController : UICollectionViewDelegate , UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 350 , height: 350)
+        let width = view.frame.width / 2
+        return CGSize(width: width - 2, height: width)
     }
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
     }
-
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
+    }
 }

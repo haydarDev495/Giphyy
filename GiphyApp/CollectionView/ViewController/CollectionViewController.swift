@@ -39,12 +39,3 @@ class CollectionViewController: UIViewController {
     }
 
 }
-
-
-
-
-
-
-
-
-
