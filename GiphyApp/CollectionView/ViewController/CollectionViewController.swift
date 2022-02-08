@@ -11,31 +11,21 @@ import Kingfisher
 
 class CollectionViewController: UIViewController {
     
-    // CollectionView
     @IBOutlet weak var myCollectionView: UICollectionView!
+    let searchController = UISearchController(searchResultsController: nil)
     
-    // searchController
-     let searchController = UISearchController(searchResultsController: nil)
-    
-    // Data
     var allGifsArray : [String] = []
     var propertyForSendSearchText = ""
-
-    
-    // Timer
     var timer = Timer()
     
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configure()
+    }
+    @objc func refreshData() {
+        getUrl(searchQuery: "", offset: 0, refresh: true)
         
     }
-    // upper scroll action
-    @objc func refreshData() {
-        getUrl(searchQuery: "", offset: 1, refresh: true)
-    
-    }
-
 }

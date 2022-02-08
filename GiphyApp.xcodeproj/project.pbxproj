@@ -9,9 +9,10 @@
 /* Begin PBXBuildFile section */
 		0D112AC027A035EE005671FE /* GifModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D112ABF27A035ED005671FE /* GifModel.swift */; };
 		0D3CF91127A3FBE700EE2BD4 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3CF91027A3FBE700EE2BD4 /* CollectionView.swift */; };
+		0DA870C827B1D08000C9EB23 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA870C727B1D08000C9EB23 /* Constants.swift */; };
 		0DD950BD27A8382C00A398E9 /* Configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD950BC27A8382C00A398E9 /* Configure.swift */; };
 		0DD950BF27A8387A00A398E9 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD950BE27A8387A00A398E9 /* SearchController.swift */; };
-		0DD950C127A8396800A398E9 /* GetURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD950C027A8396800A398E9 /* GetURL.swift */; };
+		0DD950C127A8396800A398E9 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD950C027A8396800A398E9 /* Network.swift */; };
 		0DF878B8279963B800A1BFD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF878B7279963B800A1BFD8 /* AppDelegate.swift */; };
 		0DF878BA279963B800A1BFD8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF878B9279963B800A1BFD8 /* SceneDelegate.swift */; };
 		0DF878BC279963B800A1BFD8 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF878BB279963B800A1BFD8 /* CollectionViewController.swift */; };
@@ -25,9 +26,10 @@
 /* Begin PBXFileReference section */
 		0D112ABF27A035ED005671FE /* GifModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifModel.swift; sourceTree = "<group>"; };
 		0D3CF91027A3FBE700EE2BD4 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		0DA870C727B1D08000C9EB23 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0DD950BC27A8382C00A398E9 /* Configure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configure.swift; sourceTree = "<group>"; };
 		0DD950BE27A8387A00A398E9 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
-		0DD950C027A8396800A398E9 /* GetURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetURL.swift; sourceTree = "<group>"; };
+		0DD950C027A8396800A398E9 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		0DF878B4279963B800A1BFD8 /* GiphyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GiphyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DF878B7279963B800A1BFD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DF878B9279963B800A1BFD8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,7 +61,7 @@
 			children = (
 				0D3CF90F27A3FBC800EE2BD4 /* collection View */,
 				0DFD6C3A27A9703A005441B2 /* configure */,
-				0DFD6C3C27A970AF005441B2 /* Url */,
+				0DFD6C3C27A970AF005441B2 /* Network */,
 				0DFD6C3B27A97081005441B2 /* searchController */,
 			);
 			path = extension;
@@ -156,12 +158,13 @@
 			path = searchController;
 			sourceTree = "<group>";
 		};
-		0DFD6C3C27A970AF005441B2 /* Url */ = {
+		0DFD6C3C27A970AF005441B2 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				0DD950C027A8396800A398E9 /* GetURL.swift */,
+				0DA870C727B1D08000C9EB23 /* Constants.swift */,
+				0DD950C027A8396800A398E9 /* Network.swift */,
 			);
-			path = Url;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		0DFD6C3D27A970E8005441B2 /* Model */ = {
@@ -305,10 +308,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D3CF91127A3FBE700EE2BD4 /* CollectionView.swift in Sources */,
-				0DD950C127A8396800A398E9 /* GetURL.swift in Sources */,
+				0DD950C127A8396800A398E9 /* Network.swift in Sources */,
 				0DF878BC279963B800A1BFD8 /* CollectionViewController.swift in Sources */,
 				0DD950BD27A8382C00A398E9 /* Configure.swift in Sources */,
 				0DD950BF27A8387A00A398E9 /* SearchController.swift in Sources */,
+				0DA870C827B1D08000C9EB23 /* Constants.swift in Sources */,
 				0DF878B8279963B800A1BFD8 /* AppDelegate.swift in Sources */,
 				0D112AC027A035EE005671FE /* GifModel.swift in Sources */,
 				0DF878D427999A8C00A1BFD8 /* MyCollectionViewCell.swift in Sources */,
