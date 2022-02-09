@@ -20,7 +20,6 @@ extension CollectionViewController {
     
     func configureTitle() {
         title = "Search"
-        
     }
     
     func configureCollectionView() {
@@ -32,22 +31,8 @@ extension CollectionViewController {
         self.myCollectionView.refreshControl = UIRefreshControl()
         self.myCollectionView.refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
     }
-
+    
     func configureSearchController() {
-        searchController.loadViewIfNeeded()
-        searchController.searchResultsUpdater = self
-        searchController.searchBar.placeholder = "Search"
-        searchController.searchBar.tintColor = .black
-        searchController.searchBar.backgroundColor = .white
-        searchController.searchBar.barTintColor = .black
-        searchController.obscuresBackgroundDuringPresentation = false
-        definesPresentationContext = true
         searchController.delegate = self
-        searchController.searchBar.delegate = self
-        searchController.searchBar.enablesReturnKeyAutomatically = false
-        searchController.searchBar.returnKeyType = UIReturnKeyType.done
-        navigationItem.hidesSearchBarWhenScrolling = false
-        navigationItem.searchController = searchController
-        
     }
 }

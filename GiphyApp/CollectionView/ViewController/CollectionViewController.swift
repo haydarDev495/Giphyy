@@ -11,21 +11,19 @@ import Kingfisher
 
 class CollectionViewController: UIViewController {
     
+    @IBOutlet weak var searchController: UISearchBar!
     @IBOutlet weak var myCollectionView: UICollectionView!
-    let searchController = UISearchController(searchResultsController: nil)
     
     var allGifsArray : [String] = []
     var propertyForSendSearchText = ""
     var timer = Timer()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configure()
     }
+    
     @objc func refreshData() {
         getUrl(searchQuery: "", offset: 0, refresh: true)
-        
     }
 }

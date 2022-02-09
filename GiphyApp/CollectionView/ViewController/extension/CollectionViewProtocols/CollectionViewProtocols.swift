@@ -14,11 +14,8 @@ extension CollectionViewController : UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         guard let cell = myCollectionView.dequeueReusableCell(withReuseIdentifier: "MyCollectionViewCell", for: indexPath) as? MyCollectionViewCell else { return UICollectionViewCell() }
-
         cell.myImage.kf.setImage(with: URL(string: allGifsArray[indexPath.row]))
-        cell.layer.borderColor = UIColor.red.cgColor
         return cell
     }
 }
