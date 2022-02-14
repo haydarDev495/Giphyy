@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Kingfisher
 
 class SearchVC: UIViewController {
     
@@ -30,10 +29,6 @@ class SearchVC: UIViewController {
     
     private func addHandlers() {
         self.SearchGifsCollectionView.refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
-    }
-
-    func prepaerRefreshControl() {
-        
     }
     
     func fetchGifs(searchQuery: String, offset: Int, refresh : Bool = false) {
