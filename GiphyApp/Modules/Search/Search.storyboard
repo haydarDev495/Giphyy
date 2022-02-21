@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="L8g-aI-Jju">
-                                <rect key="frame" x="0.0" y="95" width="414" height="767"/>
+                                <rect key="frame" x="0.0" y="95" width="414" height="718"/>
                                 <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="0.77497105879999995" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JIB-eN-woT">
                                     <size key="itemSize" width="183" height="168"/>
@@ -81,6 +81,8 @@
                             <constraint firstItem="L8g-aI-Jju" firstAttribute="leading" secondItem="n3Z-V0-wkJ" secondAttribute="leading" id="r2V-US-F0Y"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="N1Q-ud-hLb"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="SearchBar" destination="MXR-Vn-Ys0" id="YlS-ZS-mx8"/>
                         <outlet property="SearchGifsCollectionView" destination="L8g-aI-Jju" id="vsW-Q4-YN8"/>
