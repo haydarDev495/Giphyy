@@ -23,7 +23,6 @@ class BaseNC: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        delegate = self
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

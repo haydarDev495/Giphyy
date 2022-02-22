@@ -21,7 +21,7 @@ extension PopularVC : UICollectionViewDataSource {
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let vc = UIStoryboard.init(name: "GifDetails", bundle: nil).instantiateViewController(withIdentifier: "GifDetailsVC") as? GifDetailsVC else { return }
-        vc.change(a: popularGifsArray[indexPath.row])
+        vc.getImageForGifDetailVC(imageUrl: popularGifsArray[indexPath.row])
         present(vc, animated: true)
     }
 }
@@ -30,7 +30,7 @@ extension PopularVC : UICollectionViewDelegate , UICollectionViewDelegateFlowLay
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if indexPath.row == popularGifsArray.count - 1 {
-            let indexPathRow = indexPath.row + 2
+            let indexPathRow = indexPath.row + 1 
             fetchGifsPopularVC(offset: indexPathRow)
         }
     }
