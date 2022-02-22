@@ -15,7 +15,8 @@ class SearchVC: UIViewController {
     var allGifsArray : [String] = []
     var propertyForSendSearchText = ""
     var timer = Timer()
-    
+    var delegate: SearchDelegate!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()

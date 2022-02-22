@@ -14,6 +14,5 @@ class PopularGifCell: UICollectionViewCell {
     
     func configure(imageUrl: String ) {
         self.gifImagePopularVC.kf.setImage(with: URL(string: imageUrl))
-
     }
 }

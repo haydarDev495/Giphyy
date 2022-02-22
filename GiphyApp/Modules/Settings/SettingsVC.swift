@@ -9,6 +9,8 @@ import UIKit
 
 class SettingsVC: UIViewController {
 
+    var delegate: SettingsDelegate!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

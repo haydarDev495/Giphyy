@@ -10,6 +10,15 @@
 		0D112AC027A035EE005671FE /* GifModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D112ABF27A035ED005671FE /* GifModel.swift */; };
 		0D3CF91127A3FBE700EE2BD4 /* SearchVC + CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3CF91027A3FBE700EE2BD4 /* SearchVC + CollectionView.swift */; };
 		0D61197827BFA35100B3C76A /* SettingsVC + Tableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D61197727BFA35100B3C76A /* SettingsVC + Tableview.swift */; };
+		0D655AFF27C4F6AE00D85C2B /* AppFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D655AFE27C4F6AE00D85C2B /* AppFlowController.swift */; };
+		0D655B0127C4F6CD00D85C2B /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D655B0027C4F6CD00D85C2B /* FlowController.swift */; };
+		0D655B0527C4F78F00D85C2B /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D655B0427C4F78F00D85C2B /* MainFlowController.swift */; };
+		0D655B0727C4F7BC00D85C2B /* MainTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D655B0627C4F7BC00D85C2B /* MainTBC.swift */; };
+		0D655B0927C4F7E700D85C2B /* PopularFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D655B0827C4F7E700D85C2B /* PopularFlowController.swift */; };
+		0D655B0B27C4F86F00D85C2B /* BaseNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D655B0A27C4F86F00D85C2B /* BaseNC.swift */; };
+		0D655B0D27C4FA6A00D85C2B /* StoryboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D655B0C27C4FA6A00D85C2B /* StoryboardHelper.swift */; };
+		0D655B0F27C4FAD300D85C2B /* SearchFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D655B0E27C4FAD300D85C2B /* SearchFlowController.swift */; };
+		0D655B1127C4FAEF00D85C2B /* SettingsFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D655B1027C4FAEF00D85C2B /* SettingsFlowController.swift */; };
 		0D77F4E327C3916400A45447 /* SettingsVC + MailComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D77F4E227C3916400A45447 /* SettingsVC + MailComposer.swift */; };
 		0D77F4EC27C3B0C000A45447 /* GifDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D77F4EB27C3B0C000A45447 /* GifDetails.storyboard */; };
 		0D77F4EE27C3B11500A45447 /* GifDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D77F4ED27C3B11500A45447 /* GifDetailsVC.swift */; };
@@ -36,6 +45,15 @@
 		0D112ABF27A035ED005671FE /* GifModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifModel.swift; sourceTree = "<group>"; };
 		0D3CF91027A3FBE700EE2BD4 /* SearchVC + CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchVC + CollectionView.swift"; sourceTree = "<group>"; };
 		0D61197727BFA35100B3C76A /* SettingsVC + Tableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsVC + Tableview.swift"; sourceTree = "<group>"; };
+		0D655AFE27C4F6AE00D85C2B /* AppFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowController.swift; sourceTree = "<group>"; };
+		0D655B0027C4F6CD00D85C2B /* FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
+		0D655B0427C4F78F00D85C2B /* MainFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
+		0D655B0627C4F7BC00D85C2B /* MainTBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTBC.swift; sourceTree = "<group>"; };
+		0D655B0827C4F7E700D85C2B /* PopularFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularFlowController.swift; sourceTree = "<group>"; };
+		0D655B0A27C4F86F00D85C2B /* BaseNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNC.swift; sourceTree = "<group>"; };
+		0D655B0C27C4FA6A00D85C2B /* StoryboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardHelper.swift; sourceTree = "<group>"; };
+		0D655B0E27C4FAD300D85C2B /* SearchFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFlowController.swift; sourceTree = "<group>"; };
+		0D655B1027C4FAEF00D85C2B /* SettingsFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFlowController.swift; sourceTree = "<group>"; };
 		0D77F4E227C3916400A45447 /* SettingsVC + MailComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsVC + MailComposer.swift"; sourceTree = "<group>"; };
 		0D77F4EB27C3B0C000A45447 /* GifDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GifDetails.storyboard; sourceTree = "<group>"; };
 		0D77F4ED27C3B11500A45447 /* GifDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifDetailsVC.swift; sourceTree = "<group>"; };
@@ -74,6 +92,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D655B1227C5029200D85C2B /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				0D655B0A27C4F86F00D85C2B /* BaseNC.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		0D655B1327C5029F00D85C2B /* FlowControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0D655AFE27C4F6AE00D85C2B /* AppFlowController.swift */,
+				0D655B0027C4F6CD00D85C2B /* FlowController.swift */,
+			);
+			path = FlowControllers;
+			sourceTree = "<group>";
+		};
+		0D655B1427C502D700D85C2B /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				0D655B0C27C4FA6A00D85C2B /* StoryboardHelper.swift */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		0D77F4EA27C3B08300A45447 /* GifDetailsVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +130,8 @@
 			isa = PBXGroup;
 			children = (
 				0DC7E4D727B710C000A563B0 /* Main.storyboard */,
+				0D655B0427C4F78F00D85C2B /* MainFlowController.swift */,
+				0D655B0627C4F7BC00D85C2B /* MainTBC.swift */,
 			);
 			name = "Tab Bar";
 			sourceTree = "<group>";
@@ -112,6 +157,7 @@
 			children = (
 				0DC7E4FC27B714E200A563B0 /* Popular.storyboard */,
 				0DC7E50127B7155700A563B0 /* PopularVC.swift */,
+				0D655B0827C4F7E700D85C2B /* PopularFlowController.swift */,
 				0DD856DA27BA3AB900816F82 /* PopularVC + CollectionView.swift */,
 				0DD856D527BA3A1D00816F82 /* cell */,
 			);
@@ -123,6 +169,7 @@
 			children = (
 				0DC7E4FF27B7152900A563B0 /* Settings.storyboard */,
 				0DC7E50327B7157000A563B0 /* SettingsVC.swift */,
+				0D655B1027C4FAEF00D85C2B /* SettingsFlowController.swift */,
 				0D61197727BFA35100B3C76A /* SettingsVC + Tableview.swift */,
 				0D77F4E227C3916400A45447 /* SettingsVC + MailComposer.swift */,
 				0D977F5627BF956D00C83A0A /* cell */,
@@ -166,6 +213,7 @@
 			children = (
 				0DE6189327B5B16100C18EE0 /* Search.storyboard */,
 				0DF878BB279963B800A1BFD8 /* SearchVC.swift */,
+				0D655B0E27C4FAD300D85C2B /* SearchFlowController.swift */,
 				0D3CF91027A3FBE700EE2BD4 /* SearchVC + CollectionView.swift */,
 				0DC487F627B3E4F200B06E71 /* SearchVC + SearchBar.swift */,
 				0DC7E4D627B6864600A563B0 /* cell */,
@@ -176,6 +224,9 @@
 		0DE6188F27B5AF8900C18EE0 /* Additional components */ = {
 			isa = PBXGroup;
 			children = (
+				0D655B1427C502D700D85C2B /* Storyboard */,
+				0D655B1327C5029F00D85C2B /* FlowControllers */,
+				0D655B1227C5029200D85C2B /* Base */,
 				0D77F4EA27C3B08300A45447 /* GifDetailsVC */,
 			);
 			path = "Additional components";
@@ -376,15 +427,24 @@
 				0DF878BC279963B800A1BFD8 /* SearchVC.swift in Sources */,
 				0DA870C827B1D08000C9EB23 /* Constants.swift in Sources */,
 				0D77F4EE27C3B11500A45447 /* GifDetailsVC.swift in Sources */,
+				0D655B0D27C4FA6A00D85C2B /* StoryboardHelper.swift in Sources */,
+				0D655B0127C4F6CD00D85C2B /* FlowController.swift in Sources */,
 				0DD856DB27BA3AB900816F82 /* PopularVC + CollectionView.swift in Sources */,
+				0D655B0727C4F7BC00D85C2B /* MainTBC.swift in Sources */,
+				0D655B0B27C4F86F00D85C2B /* BaseNC.swift in Sources */,
 				0DD856D727BA3A4B00816F82 /* PopularGifCell.swift in Sources */,
+				0D655B1127C4FAEF00D85C2B /* SettingsFlowController.swift in Sources */,
 				0D61197827BFA35100B3C76A /* SettingsVC + Tableview.swift in Sources */,
 				0DF878B8279963B800A1BFD8 /* AppDelegate.swift in Sources */,
 				0D112AC027A035EE005671FE /* GifModel.swift in Sources */,
+				0D655B0527C4F78F00D85C2B /* MainFlowController.swift in Sources */,
 				0DC7E50227B7155700A563B0 /* PopularVC.swift in Sources */,
 				0DF878D427999A8C00A1BFD8 /* GifCell.swift in Sources */,
 				0D77F4E327C3916400A45447 /* SettingsVC + MailComposer.swift in Sources */,
+				0D655B0927C4F7E700D85C2B /* PopularFlowController.swift in Sources */,
 				0DC7E50427B7157000A563B0 /* SettingsVC.swift in Sources */,
+				0D655B0F27C4FAD300D85C2B /* SearchFlowController.swift in Sources */,
+				0D655AFF27C4F6AE00D85C2B /* AppFlowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,13 +11,13 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    private var appFlowContoller: AppFlowController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let initialVC = storyboard.instantiateViewController(withIdentifier: "TabBarVC")
-        window?.rootViewController = initialVC
-        window?.makeKeyAndVisible()
+        let window = UIWindow.init(frame: UIScreen.main.bounds)
+        window.makeKeyAndVisible()
+        self.appFlowContoller = AppFlowController(withWindow: window)
+        self.appFlowContoller?.start()
 
         return true
     }

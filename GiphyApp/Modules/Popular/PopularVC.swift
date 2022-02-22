@@ -8,7 +8,8 @@
 import UIKit
 
 class PopularVC: UIViewController {
-
+    
+    var delegate: PopularDelegate!
     @IBOutlet weak var PopularGifsCollectionView: UICollectionView!
     var popularGifsArray : [String] = []
     
@@ -37,7 +38,5 @@ class PopularVC: UIViewController {
                 }
             }
         }.resume()
-
-
     }
 }
