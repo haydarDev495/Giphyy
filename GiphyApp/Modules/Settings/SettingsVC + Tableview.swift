@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import MessageUI
 
 extension SettingsVC : UITableViewDataSource, UITableViewDelegate {
     
@@ -26,7 +25,7 @@ extension SettingsVC : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
-            showMailComporser()
+            showMailApp()
         } else {
             showLinkInSafary()
         }

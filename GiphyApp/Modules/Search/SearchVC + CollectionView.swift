@@ -25,13 +25,13 @@ extension SearchVC : UICollectionViewDelegate , UICollectionViewDelegateFlowLayo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = UIStoryboard.init(name: "GifDetails", bundle: nil).instantiateViewController(withIdentifier: "GifDetailsVC") as! GifDetailsVC
-        vc.change(a: allGifsArray[indexPath.row])
+        vc.getImageForGifDetailVC(imageUrl: allGifsArray[indexPath.row])
         present(vc, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if indexPath.row == allGifsArray.count - 1 {
-            let indexPathRow = indexPath.row + 2
+            let indexPathRow = indexPath.row + 1
             fetchGifs(searchQuery: "\(propertyForSendSearchText)", offset: indexPathRow)
         }
     }

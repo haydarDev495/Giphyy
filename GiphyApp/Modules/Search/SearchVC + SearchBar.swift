@@ -7,6 +7,9 @@
 import UIKit
 
 extension SearchVC : UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         propertyForSendSearchText = searchText
         timer.invalidate()

@@ -23,9 +23,12 @@ class SearchVC: UIViewController {
         addHandlers()
     }
     
+
     private func setupUI() {
         self.SearchGifsCollectionView.refreshControl = UIRefreshControl()
         fetchGifs(searchQuery: "", offset: 0, refresh: false)
+        
+        hideKeyboardWhenTappedAround()
     }
     
     private func addHandlers() {

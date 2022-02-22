@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D112AC027A035EE005671FE /* GifModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D112ABF27A035ED005671FE /* GifModel.swift */; };
+		0D3902FB27C59D72008AE1CE /* ViewControllers + Close Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3902FA27C59D72008AE1CE /* ViewControllers + Close Keyboard.swift */; };
 		0D3CF91127A3FBE700EE2BD4 /* SearchVC + CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3CF91027A3FBE700EE2BD4 /* SearchVC + CollectionView.swift */; };
 		0D61197827BFA35100B3C76A /* SettingsVC + Tableview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D61197727BFA35100B3C76A /* SettingsVC + Tableview.swift */; };
 		0D655AFF27C4F6AE00D85C2B /* AppFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D655AFE27C4F6AE00D85C2B /* AppFlowController.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		0D112ABF27A035ED005671FE /* GifModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifModel.swift; sourceTree = "<group>"; };
+		0D3902FA27C59D72008AE1CE /* ViewControllers + Close Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewControllers + Close Keyboard.swift"; sourceTree = "<group>"; };
 		0D3CF91027A3FBE700EE2BD4 /* SearchVC + CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchVC + CollectionView.swift"; sourceTree = "<group>"; };
 		0D61197727BFA35100B3C76A /* SettingsVC + Tableview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsVC + Tableview.swift"; sourceTree = "<group>"; };
 		0D655AFE27C4F6AE00D85C2B /* AppFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowController.swift; sourceTree = "<group>"; };
@@ -92,6 +94,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D3902FC27C5A4D1008AE1CE /* CloseKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				0D3902FA27C59D72008AE1CE /* ViewControllers + Close Keyboard.swift */,
+			);
+			name = CloseKeyboard;
+			sourceTree = "<group>";
+		};
 		0D655B1227C5029200D85C2B /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +234,7 @@
 		0DE6188F27B5AF8900C18EE0 /* Additional components */ = {
 			isa = PBXGroup;
 			children = (
+				0D3902FC27C5A4D1008AE1CE /* CloseKeyboard */,
 				0D655B1427C502D700D85C2B /* Storyboard */,
 				0D655B1327C5029F00D85C2B /* FlowControllers */,
 				0D655B1227C5029200D85C2B /* Base */,
@@ -438,6 +449,7 @@
 				0DF878B8279963B800A1BFD8 /* AppDelegate.swift in Sources */,
 				0D112AC027A035EE005671FE /* GifModel.swift in Sources */,
 				0D655B0527C4F78F00D85C2B /* MainFlowController.swift in Sources */,
+				0D3902FB27C59D72008AE1CE /* ViewControllers + Close Keyboard.swift in Sources */,
 				0DC7E50227B7155700A563B0 /* PopularVC.swift in Sources */,
 				0DF878D427999A8C00A1BFD8 /* GifCell.swift in Sources */,
 				0D77F4E327C3916400A45447 /* SettingsVC + MailComposer.swift in Sources */,
@@ -584,9 +596,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = R576VBUN7U;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GiphyApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
