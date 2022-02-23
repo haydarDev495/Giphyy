@@ -15,16 +15,20 @@ class SearchVC: UIViewController {
     var allGifsArray : [String] = []
     var propertyForSendSearchText = ""
     var timer = Timer()
-    
+    var delegate: SearchDelegate!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         addHandlers()
     }
     
+
     private func setupUI() {
         self.SearchGifsCollectionView.refreshControl = UIRefreshControl()
         fetchGifs(searchQuery: "", offset: 0, refresh: false)
+        
+        hideKeyboardWhenTappedAround()
     }
     
     private func addHandlers() {

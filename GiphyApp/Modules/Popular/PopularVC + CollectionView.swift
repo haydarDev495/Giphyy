@@ -1,38 +1,37 @@
 //
-//  SearchVC + CollectionView.swift
+//  PopularVC + CollectionView.swift
 //  GiphyApp
 //
-//  Created by Haydar Bekmuradov on 28.01.22.
+//  Created by Haydar Bekmuradov on 14.02.22.
 //
 
 import UIKit
+import Kingfisher
 
-
-extension SearchVC : UICollectionViewDataSource {
-    
+extension PopularVC : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return allGifsArray.count
+        return popularGifsArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GifCell", for: indexPath) as? GifCell else { return UICollectionViewCell() }
-        cell.configure(imageUrl: allGifsArray[indexPath.row])
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PopularGifCell", for: indexPath) as? PopularGifCell else { return UICollectionViewCell() }
+        cell.configure(imageUrl: popularGifsArray[indexPath.row])
+        
         return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let vc = UIStoryboard.init(name: "GifDetails", bundle: nil).instantiateViewController(withIdentifier: "GifDetailsVC") as? GifDetailsVC else { return }
+        vc.setImageForGifDetailVC(imageUrl: popularGifsArray[indexPath.row])
+        present(vc, animated: true)
     }
 }
 
-extension SearchVC : UICollectionViewDelegate , UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = UIStoryboard.init(name: "GifDetails", bundle: nil).instantiateViewController(withIdentifier: "GifDetailsVC") as! GifDetailsVC
-        vc.setImageForGifDetailVC(imageUrl: allGifsArray[indexPath.row])
-        present(vc, animated: true)
-    }
+extension PopularVC : UICollectionViewDelegate , UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.row == allGifsArray.count - 1 {
-            let indexPathRow = indexPath.row + 1
-            fetchGifs(searchQuery: "\(propertyForSendSearchText)", offset: indexPathRow)
+        if indexPath.row == popularGifsArray.count - 1 {
+            let indexPathRow = indexPath.row + 1 
+            fetchGifsPopularVC(offset: indexPathRow)
         }
     }
     
