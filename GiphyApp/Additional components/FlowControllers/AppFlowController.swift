@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SwinjectStoryboard
 
 final class AppFlowController: FlowController {
     

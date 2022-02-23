@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SwinjectStoryboard
 
 enum FlowError: Error {
     case notFound(String)

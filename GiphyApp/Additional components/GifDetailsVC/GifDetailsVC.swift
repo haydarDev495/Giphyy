@@ -20,7 +20,7 @@ class GifDetailsVC: UIViewController {
         setupUI()
     }
     
-    func getImageForGifDetailVC(imageUrl: String) {
+    func setImageForGifDetailVC(imageUrl: String) {
         urlImageString = imageUrl
     }
     

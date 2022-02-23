@@ -21,7 +21,7 @@ extension PopularVC : UICollectionViewDataSource {
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let vc = UIStoryboard.init(name: "GifDetails", bundle: nil).instantiateViewController(withIdentifier: "GifDetailsVC") as? GifDetailsVC else { return }
-        vc.getImageForGifDetailVC(imageUrl: popularGifsArray[indexPath.row])
+        vc.setImageForGifDetailVC(imageUrl: popularGifsArray[indexPath.row])
         present(vc, animated: true)
     }
 }

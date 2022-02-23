@@ -25,7 +25,7 @@ extension SearchVC : UICollectionViewDelegate , UICollectionViewDelegateFlowLayo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = UIStoryboard.init(name: "GifDetails", bundle: nil).instantiateViewController(withIdentifier: "GifDetailsVC") as! GifDetailsVC
-        vc.getImageForGifDetailVC(imageUrl: allGifsArray[indexPath.row])
+        vc.setImageForGifDetailVC(imageUrl: allGifsArray[indexPath.row])
         present(vc, animated: true)
     }
     
