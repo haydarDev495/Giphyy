@@ -7,15 +7,14 @@
 
 import UIKit
 
-class SearchVC: UIViewController {
+class SearchVC: UIViewController, SearchDelegate {
     
-    @IBOutlet weak var SearchBar: UISearchBar!
-    @IBOutlet weak var SearchGifsCollectionView: UICollectionView!
-    
-    var allGifsArray : [String] = []
-    var propertyForSendSearchText = ""
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var searchGifsCollectionView: UICollectionView!
+
+    var viewModel: SearchViewModel!
     var timer = Timer()
-    var delegate: SearchDelegate!
+    var navigationSearchDelegate: NavigationSearchDelegate!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,47 +22,29 @@ class SearchVC: UIViewController {
         addHandlers()
     }
     
-
     private func setupUI() {
-        self.SearchGifsCollectionView.refreshControl = UIRefreshControl()
-        fetchGifs(searchQuery: "", offset: 0, refresh: false)
-        
+        self.searchGifsCollectionView.refreshControl = UIRefreshControl()
+        viewModel.fetchGifs(searchQuery: "", offset: 0, refresh: false)
         hideKeyboardWhenTappedAround()
     }
     
     private func addHandlers() {
-        self.SearchGifsCollectionView.refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
-    }
-    
-    func fetchGifs(searchQuery: String, offset: Int, refresh : Bool = false) {
-        if refresh {
-            SearchGifsCollectionView.refreshControl?.beginRefreshing()
-        }
-        
-        guard let url = URL(string: "\(Constant.domain)\(Constant.apiVersion)/gifs/search?q=\(searchQuery)&api_key=\(Constant.apiKey)&limit=\(Constant.limit)&offset=\(offset)") else { return }
-        
-        URLSession.shared.dataTask(with: url) { [self] data, response, error in
-            DispatchQueue.main.async {
-                if refresh {
-                    self.SearchGifsCollectionView.refreshControl?.endRefreshing()
-                }
-                
-                guard let data = data else { return }
-                
-                do {
-                    let json = try JSONDecoder().decode(GIfModel.self, from: data)
-                    for i in json.data {
-                        allGifsArray.append(i.images.original.url)
-                    }
-                    self.SearchGifsCollectionView.reloadData()
-                } catch {
-                    return
-                }
-            }
-        }.resume()
+        self.searchGifsCollectionView.refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
     }
     
     @objc func refreshData() {
-        fetchGifs(searchQuery: "", offset: 0, refresh: true)
+        viewModel.fetchGifs(searchQuery: "", offset: 0, refresh: true)
+    }
+    
+    func updateUI() {
+        self.searchGifsCollectionView?.reloadData()
+    }
+    
+    func searchCVBeginRefreshing() {
+        searchGifsCollectionView.refreshControl?.beginRefreshing()
+    }
+    
+    func searchVCEndRefreshing() {
+        self.searchGifsCollectionView.refreshControl?.endRefreshing()
     }
 }

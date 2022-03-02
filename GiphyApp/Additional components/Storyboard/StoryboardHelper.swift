@@ -23,7 +23,6 @@ public protocol PStoryBoard {
 }
 
 public extension UIStoryboard {
-    
     convenience init(storyboard: PStoryBoard, bundle: Bundle? = nil) {
         self.init(name: storyboard.name(), bundle: bundle)
     }
@@ -31,11 +30,9 @@ public extension UIStoryboard {
     func instantiateViewController<T: UIViewController>() -> T {
         let storyBoardId = String(describing: T.self)
         let optionalViewController = self.instantiateViewController(withIdentifier: storyBoardId)
-
         guard let viewController = optionalViewController as? T  else {
             fatalError("Couldn’t instantiate view controller with identifier \(storyBoardId) ")
         }
-
         return viewController
     }
 
@@ -53,7 +50,8 @@ enum Storyboard: String, PStoryBoard {
     case popular
     case search
     case settings
-
+    case details
+    
     func name() -> String {
         return self.rawValue.capitalized
     }

@@ -8,13 +8,17 @@
 import UIKit
 import SwinjectStoryboard
 
+protocol PopularDelegate {
+    func updateUI()
+}
 
-protocol PopularDelegate {}
+protocol NavigationPopularDelegate {
+    func showGifDetailsVC(imageUrl: String)
+}
 
-final class PopularFlowController: FlowController, PopularDelegate {
+final class PopularFlowController: FlowController, NavigationPopularDelegate {
 
     var presentableViewController: UIViewController { navigationController }
-    
     private let rootWindow: UIWindow
     private let navigationController = BaseNC(rootViewController: UIViewController())
     
@@ -24,9 +28,15 @@ final class PopularFlowController: FlowController, PopularDelegate {
     
     func start() {
         let vc: PopularVC = SwinjectStoryboard.create(storyboard: .popular).instantiateViewController()
-        vc.delegate = self
+        vc.navigationPopularDelegate = self
         navigationController.tabBarItem = UITabBarItem(title: "Popular", image: UIImage.init(systemName: "heart"), selectedImage: nil)
         navigationController.viewControllers = [vc]
+    }
+    
+    func showGifDetailsVC(imageUrl: String) {
+        let vc: GifDetailsVC = SwinjectStoryboard.create(storyboard: .details).instantiateViewController()
+        vc.setImageForGifDetailVC(imageUrl: imageUrl)
+        navigationController.pushViewController(vc, animated: true)
     }
 }
 

@@ -9,12 +9,19 @@ import UIKit
 import SwinjectStoryboard
 
 
-protocol SearchDelegate {}
+protocol SearchDelegate {
+    func updateUI()
+    func searchCVBeginRefreshing()
+    func searchVCEndRefreshing() 
+}
 
-final class SearchFlowController: FlowController, SearchDelegate {
+protocol NavigationSearchDelegate {
+    func showGifDetailsVC(imageUrl: String)
+}
 
-    var presentableViewController: UIViewController { navigationController }
+final class SearchFlowController: FlowController, NavigationSearchDelegate {
     
+    var presentableViewController: UIViewController { navigationController }
     private let rootWindow: UIWindow
     private let navigationController = BaseNC(rootViewController: UIViewController())
     
@@ -24,8 +31,19 @@ final class SearchFlowController: FlowController, SearchDelegate {
     
     func start() {
         let vc: SearchVC = SwinjectStoryboard.create(storyboard: .search).instantiateViewController()
-        vc.delegate = self
+        vc.viewModel = SearchViewModel(delegate: vc)
+        vc.navigationSearchDelegate = self
         navigationController.tabBarItem = UITabBarItem(title: "Search", image: UIImage.init(systemName: "magnifyingglass"), selectedImage: nil)
         navigationController.viewControllers = [vc]
+    }
+    
+    func showGifDetailsVC(imageUrl: String) {
+        let vc : GifDetailsVC = SwinjectStoryboard.create(storyboard: .details).instantiateViewController()
+        vc.setImageForGifDetailVC(imageUrl: imageUrl)
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func openDetails() {
+        
     }
 }

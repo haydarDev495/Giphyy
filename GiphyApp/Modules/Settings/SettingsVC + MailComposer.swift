@@ -15,7 +15,7 @@ extension SettingsVC {
     }
     
     func showMailApp() {
-        guard let url = NSURL(string: "mailto:apps@leonovs.com") else { return }
-        UIApplication.shared.open(url as URL)
+        guard let url = URL(string: "mailto:apps@leonovs.com") else { return }
+        UIApplication.shared.open(url)
     }
 }

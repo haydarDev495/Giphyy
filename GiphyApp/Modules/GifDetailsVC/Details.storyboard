@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Gif DetailsVC-->
+        <scene sceneID="krX-pL-Ler">
+            <objects>
+                <viewController storyboardIdentifier="GifDetailsVC" id="oJP-dR-wz8" customClass="GifDetailsVC" customModule="GiphyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sAI-zW-ihk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Kp-l2-HpO">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rP2-K6-NGB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8Kp-l2-HpO" firstAttribute="top" secondItem="rP2-K6-NGB" secondAttribute="top" id="aSj-1v-89F"/>
+                            <constraint firstItem="8Kp-l2-HpO" firstAttribute="trailing" secondItem="rP2-K6-NGB" secondAttribute="trailing" id="eOW-P2-ynS"/>
+                            <constraint firstItem="8Kp-l2-HpO" firstAttribute="leading" secondItem="rP2-K6-NGB" secondAttribute="leading" id="il7-3f-XOQ"/>
+                            <constraint firstItem="rP2-K6-NGB" firstAttribute="bottom" secondItem="8Kp-l2-HpO" secondAttribute="bottom" id="ujV-6A-kch"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="fullScreeGifImage" destination="8Kp-l2-HpO" id="Oym-Rn-KAA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xR0-qA-Ufp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="57.971014492753625" y="-202.23214285714286"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

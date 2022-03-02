@@ -11,7 +11,7 @@ enum FlowError: Error {
     case notFound(String)
 }
 
-protocol FlowController {
+protocol FlowController : AnyObject {
     func start()
     var rootWindow: UIWindow? { get }
 }

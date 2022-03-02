@@ -6,32 +6,29 @@
 //
 
 import UIKit
-import Kingfisher
 
 extension PopularVC : UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return popularGifsArray.count
+        return viewModel.popularGifsArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PopularGifCell", for: indexPath) as? PopularGifCell else { return UICollectionViewCell() }
-        cell.configure(imageUrl: popularGifsArray[indexPath.row])
-        
+        cell.configure(imageUrl: viewModel.popularGifsArray[indexPath.row])
         return cell
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let vc = UIStoryboard.init(name: "GifDetails", bundle: nil).instantiateViewController(withIdentifier: "GifDetailsVC") as? GifDetailsVC else { return }
-        vc.setImageForGifDetailVC(imageUrl: popularGifsArray[indexPath.row])
-        present(vc, animated: true)
+        navigationPopularDelegate?.showGifDetailsVC(imageUrl: viewModel.popularGifsArray[indexPath.row])
     }
 }
 
 extension PopularVC : UICollectionViewDelegate , UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.row == popularGifsArray.count - 1 {
-            let indexPathRow = indexPath.row + 1 
-            fetchGifsPopularVC(offset: indexPathRow)
+        if indexPath.row == viewModel.popularGifsArray.count - 1 {
+            viewModel.fetchPopularGifs(offset: indexPath.row + 1)
         }
     }
     

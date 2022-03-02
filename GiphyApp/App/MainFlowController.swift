@@ -30,6 +30,7 @@ final class MainFlowController: FlowController {
             search.presentableViewController,
             settings.presentableViewController
         ]
+        
         UIView.transition(with: rootWindow, duration: 0.5, options: .transitionFlipFromBottom, animations: nil, completion: nil)
         rootWindow.rootViewController = tabBarViewController
         rootWindow.makeKeyAndVisible()
