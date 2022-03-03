@@ -15,11 +15,9 @@ protocol SearchDelegate {
     func searchVCEndRefreshing() 
 }
 
-protocol NavigationSearchDelegate {
-    func showGifDetailsVC(imageUrl: String)
-}
 
-final class SearchFlowController: FlowController, NavigationSearchDelegate {
+
+final class SearchFlowController: FlowController, NavigationDelegate {
     
     var presentableViewController: UIViewController { navigationController }
     private let rootWindow: UIWindow
@@ -41,9 +39,5 @@ final class SearchFlowController: FlowController, NavigationSearchDelegate {
         let vc : GifDetailsVC = SwinjectStoryboard.create(storyboard: .details).instantiateViewController()
         vc.setImageForGifDetailVC(imageUrl: imageUrl)
         navigationController.pushViewController(vc, animated: true)
-    }
-    
-    func openDetails() {
-        
     }
 }

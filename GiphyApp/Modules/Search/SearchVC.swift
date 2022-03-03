@@ -14,7 +14,7 @@ class SearchVC: UIViewController, SearchDelegate {
 
     var viewModel: SearchViewModel!
     var timer = Timer()
-    var navigationSearchDelegate: NavigationSearchDelegate!
+    var navigationSearchDelegate: NavigationDelegate!
 
     override func viewDidLoad() {
         super.viewDidLoad()

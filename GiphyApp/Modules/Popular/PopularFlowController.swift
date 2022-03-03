@@ -12,11 +12,7 @@ protocol PopularDelegate {
     func updateUI()
 }
 
-protocol NavigationPopularDelegate {
-    func showGifDetailsVC(imageUrl: String)
-}
-
-final class PopularFlowController: FlowController, NavigationPopularDelegate {
+final class PopularFlowController: FlowController, NavigationDelegate {
 
     var presentableViewController: UIViewController { navigationController }
     private let rootWindow: UIWindow

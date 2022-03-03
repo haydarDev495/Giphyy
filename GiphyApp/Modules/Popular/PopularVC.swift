@@ -12,7 +12,7 @@ class PopularVC: UIViewController, PopularDelegate {
     @IBOutlet weak var popularGifsCollectionView: UICollectionView!
     
     let viewModel = PopularViewModel()
-    var navigationPopularDelegate: NavigationPopularDelegate!
+    var navigationPopularDelegate: NavigationDelegate!
 
     override func viewDidLoad() {
         super.viewDidLoad()
