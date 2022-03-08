@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4EAECA43-C727-4F9B-83C5-7AA93E7FFF96"
+            uuid = "C34F4134-4409-4E82-B138-B724632B97E5"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "GiphyApp/Modules/Popular/PopularVC + CollectionView.swift"
+            filePath = "GiphyApp/Modules/Search/SearchVC + SearchBar.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "collectionView(_:didSelectItemAt:)"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "searchBar(_:textDidChange:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

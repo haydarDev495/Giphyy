@@ -8,6 +8,8 @@ target 'GiphyApp' do
 pod 'Kingfisher', '~> 7.0'
 pod 'Swinject'
 pod 'SwinjectStoryboard'
+pod 'RxSwift', '6.5.0'
+pod 'RxCocoa', '6.5.0'
 
 
 

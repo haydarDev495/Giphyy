@@ -1,20 +1,39 @@
 PODS:
   - Kingfisher (7.1.2)
-  - SwiftGifOrigin (1.7.0)
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxSwift (6.5.0)
+  - Swinject (2.7.1)
+  - SwinjectStoryboard (2.2.2):
+    - Swinject (~> 2.7.1)
 
 DEPENDENCIES:
   - Kingfisher (~> 7.0)
-  - SwiftGifOrigin (~> 1.7.0)
+  - RxCocoa (= 6.5.0)
+  - RxSwift (= 6.5.0)
+  - Swinject
+  - SwinjectStoryboard
 
 SPEC REPOS:
   trunk:
     - Kingfisher
-    - SwiftGifOrigin
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - Swinject
+    - SwinjectStoryboard
 
 SPEC CHECKSUMS:
   Kingfisher: 44ed6a8504763f27bab46163adfac83f5deb240c
-  SwiftGifOrigin: fbd6cf37afcfcf97a5c3db996ddc0492e5c5c145
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
+  SwinjectStoryboard: 240ce371396da09a4c43c72ee5c148108500e184
 
-PODFILE CHECKSUM: 039adf37b532089b9d80499497a20c91179d60d1
+PODFILE CHECKSUM: 67656aca1c8c5821fdbee9e42bdacb06e5ee39c1
 
 COCOAPODS: 1.11.2

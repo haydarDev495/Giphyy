@@ -9,25 +9,25 @@ import UIKit
 
 extension PopularVC : UICollectionViewDataSource {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.popularGifsArray.count
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
+        return viewModel.popularGifsArray.value.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PopularGifCell", for: indexPath) as? PopularGifCell else { return UICollectionViewCell() }
-        cell.configure(imageUrl: viewModel.popularGifsArray[indexPath.row])
+        cell.configure(imageUrl: viewModel.popularGifsArray.value[indexPath.row])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        navigationPopularDelegate?.showGifDetailsVC(imageUrl: viewModel.popularGifsArray[indexPath.row])
+        onForwardFlow.accept(.details(string: viewModel.popularGifsArray.value[indexPath.row]))
     }
 }
 
 extension PopularVC : UICollectionViewDelegate , UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.row == viewModel.popularGifsArray.count - 1 {
+        if indexPath.row == viewModel.popularGifsArray.value.count - 1 {
             viewModel.fetchPopularGifs(offset: indexPath.row + 1)
         }
     }

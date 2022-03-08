@@ -6,16 +6,24 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 final class SearchViewModel {
     
-    private var delegate: SearchDelegate!
-    var allGifsArray : [String] = []
+    private var newAndOldGifs: [String] = []
+    var searchGifsArray = BehaviorRelay<[String]>(value: [])
     var propertyForSendSearchText = ""
-
+    private var delegate: SearchDelegate!
+    
     required init(delegate: SearchDelegate) {
         self.delegate = delegate
         fetchGifs(searchQuery: "", offset: 0)
+    }
+    
+    func cleanApp() {
+        searchGifsArray.accept([])
+        newAndOldGifs.removeAll()
     }
     
     func fetchGifs(searchQuery: String, offset: Int, refresh : Bool = false) {
@@ -32,10 +40,12 @@ final class SearchViewModel {
                 guard let data = data else { return }
                 do {
                     let json = try JSONDecoder().decode(GIfModel.self, from: data)
+                    var newGifs: [String] = []
                     for i in json.data {
-                        allGifsArray.append(i.images.original.url)
+                        newGifs.append(i.images.original.url)
                     }
-                    self.delegate.updateUI()
+                    newAndOldGifs.append(contentsOf: newGifs)
+                    searchGifsArray.accept(newAndOldGifs)
                 } catch {
                     return
                 }
@@ -43,3 +53,4 @@ final class SearchViewModel {
         }.resume()
     }
 }
+

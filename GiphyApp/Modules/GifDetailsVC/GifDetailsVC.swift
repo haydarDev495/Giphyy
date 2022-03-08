@@ -8,10 +8,11 @@
 import UIKit
 import Kingfisher
 
+
 class GifDetailsVC: UIViewController {
 
+
     @IBOutlet weak var fullScreeGifImage: UIImageView!
-    
     private var urlImageString = ""
 
     override func viewDidLoad() {

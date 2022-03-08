@@ -11,12 +11,12 @@ import UIKit
 extension SearchVC : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.allGifsArray.count
+        return viewModel.searchGifsArray.value.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GifCell", for: indexPath) as? GifCell else { return UICollectionViewCell() }
-        cell.configure(imageUrl: viewModel.allGifsArray[indexPath.row])
+        cell.configure(imageUrl: viewModel.searchGifsArray.value[indexPath.row])
         return cell
     }
 }
@@ -24,11 +24,11 @@ extension SearchVC : UICollectionViewDataSource {
 extension SearchVC : UICollectionViewDelegate , UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        navigationSearchDelegate.showGifDetailsVC(imageUrl: viewModel.allGifsArray[indexPath.row])
+        onForwardFlow.accept(.details(imageUrl: viewModel.searchGifsArray.value[indexPath.row]))
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.row == viewModel.allGifsArray.count - 1 {
+        if indexPath.row == viewModel.searchGifsArray.value.count - 1 {
             let indexPathRow = indexPath.row + 1
             viewModel.fetchGifs(searchQuery: "\(viewModel.propertyForSendSearchText)", offset: indexPathRow)
         }

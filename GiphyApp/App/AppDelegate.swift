@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.makeKeyAndVisible()
         self.appFlowContoller = AppFlowController(withWindow: window)
         self.appFlowContoller?.start()
-
         return true
     }
 }

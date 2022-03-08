@@ -7,6 +7,4 @@
 
 import Foundation
 
-protocol NavigationDelegate {
-    func showGifDetailsVC(imageUrl: String)
-}
+protocol GifDetailsVCDelegate {}

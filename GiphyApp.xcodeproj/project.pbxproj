@@ -25,7 +25,7 @@
 		0D77F4EE27C3B11500A45447 /* GifDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D77F4ED27C3B11500A45447 /* GifDetailsVC.swift */; };
 		0D81A54727C8E0BD00CAC733 /* PopularViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D81A54627C8E0BD00CAC733 /* PopularViewModel.swift */; };
 		0D977F5827BF95C100C83A0A /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D977F5727BF95C100C83A0A /* SettingsCell.swift */; };
-		0DA6A64027D0BF55009FF15B /* NavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA6A63F27D0BF55009FF15B /* NavigationDelegate.swift */; };
+		0DA6A64027D0BF55009FF15B /* GifDetailsVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA6A63F27D0BF55009FF15B /* GifDetailsVCDelegate.swift */; };
 		0DA870C827B1D08000C9EB23 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA870C727B1D08000C9EB23 /* Constants.swift */; };
 		0DC1D6F027C917CE00A91733 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC1D6EF27C917CE00A91733 /* SearchViewModel.swift */; };
 		0DC487F727B3E4F200B06E71 /* SearchVC + SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC487F627B3E4F200B06E71 /* SearchVC + SearchBar.swift */; };
@@ -64,7 +64,7 @@
 		0D77F4ED27C3B11500A45447 /* GifDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifDetailsVC.swift; sourceTree = "<group>"; };
 		0D81A54627C8E0BD00CAC733 /* PopularViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularViewModel.swift; sourceTree = "<group>"; };
 		0D977F5727BF95C100C83A0A /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
-		0DA6A63F27D0BF55009FF15B /* NavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDelegate.swift; sourceTree = "<group>"; };
+		0DA6A63F27D0BF55009FF15B /* GifDetailsVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifDetailsVCDelegate.swift; sourceTree = "<group>"; };
 		0DA870C727B1D08000C9EB23 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0DC1D6EF27C917CE00A91733 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		0DC487F627B3E4F200B06E71 /* SearchVC + SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchVC + SearchBar.swift"; sourceTree = "<group>"; };
@@ -160,12 +160,12 @@
 			path = cell;
 			sourceTree = "<group>";
 		};
-		0DA6A63E27D0BF33009FF15B /* Protocols */ = {
+		0DA6A63E27D0BF33009FF15B /* Delegate */ = {
 			isa = PBXGroup;
 			children = (
-				0DA6A63F27D0BF55009FF15B /* NavigationDelegate.swift */,
+				0DA6A63F27D0BF55009FF15B /* GifDetailsVCDelegate.swift */,
 			);
-			path = Protocols;
+			path = Delegate;
 			sourceTree = "<group>";
 		};
 		0DC7E4D627B6864600A563B0 /* cell */ = {
@@ -251,7 +251,7 @@
 		0DE6188F27B5AF8900C18EE0 /* Additional components */ = {
 			isa = PBXGroup;
 			children = (
-				0DA6A63E27D0BF33009FF15B /* Protocols */,
+				0DA6A63E27D0BF33009FF15B /* Delegate */,
 				0D655B1427C502D700D85C2B /* Storyboard */,
 				0D655B1327C5029F00D85C2B /* FlowControllers */,
 				0D655B1227C5029200D85C2B /* Base */,
@@ -471,7 +471,7 @@
 				0DF878D427999A8C00A1BFD8 /* GifCell.swift in Sources */,
 				0D77F4E327C3916400A45447 /* SettingsVC + MailComposer.swift in Sources */,
 				0D655B0927C4F7E700D85C2B /* PopularFlowController.swift in Sources */,
-				0DA6A64027D0BF55009FF15B /* NavigationDelegate.swift in Sources */,
+				0DA6A64027D0BF55009FF15B /* GifDetailsVCDelegate.swift in Sources */,
 				0DC7E50427B7157000A563B0 /* SettingsVC.swift in Sources */,
 				0D655B0F27C4FAD300D85C2B /* SearchFlowController.swift in Sources */,
 				0DC1D6F027C917CE00A91733 /* SearchViewModel.swift in Sources */,

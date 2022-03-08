@@ -6,12 +6,14 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 class PopularViewModel {
     
-    var delegate: PopularDelegate!
-    var popularGifsArray : [String] = []
-    
+    var popularGifsArray = BehaviorRelay<[String]>(value: [])
+    private var newAndOldGifs: [String] = []
+        
     init() {
         fetchPopularGifs(offset: 0)
     }
@@ -23,10 +25,12 @@ class PopularViewModel {
                 guard let data = data else { return }
                 do {
                     let json = try JSONDecoder().decode(GIfModel.self, from: data)
+                    var newGifs: [String] = []
                     for i in json.data {
-                        popularGifsArray.append(i.images.original.url)
+                        newGifs.append(i.images.original.url)
                     }
-                    self.delegate.updateUI()
+                    newAndOldGifs.append(contentsOf: newGifs)
+                    popularGifsArray.accept(newAndOldGifs)
                 } catch {
                     return
                 }
@@ -34,3 +38,4 @@ class PopularViewModel {
         }.resume()
     }
 }
+

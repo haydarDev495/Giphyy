@@ -5,6 +5,8 @@
 //  Created by Haydar Bekmuradov on 31.01.22.
 //
 import UIKit
+import RxSwift
+import RxCocoa
 
 extension SearchVC : UISearchBarDelegate {
     
@@ -17,9 +19,10 @@ extension SearchVC : UISearchBarDelegate {
         timer.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false, block: { [self] timer in
             if searchText.isEmpty {
-                viewModel.allGifsArray.removeAll()
+                viewModel.cleanApp()
+            } else {
+                self.viewModel.fetchGifs(searchQuery: searchText, offset: 0)
             }
-            self.viewModel.fetchGifs(searchQuery: searchText, offset: 0)
         })
         self.searchGifsCollectionView.reloadData()
     }

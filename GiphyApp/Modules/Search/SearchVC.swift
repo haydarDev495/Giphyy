@@ -6,15 +6,19 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class SearchVC: UIViewController, SearchDelegate {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchGifsCollectionView: UICollectionView!
-
+    
+    var delegate: GifDetailsVCDelegate!
     var viewModel: SearchViewModel!
+    private let bag = DisposeBag()
     var timer = Timer()
-    var navigationSearchDelegate: NavigationDelegate!
+    let onForwardFlow = PublishRelay<SearchFlow>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +33,9 @@ class SearchVC: UIViewController, SearchDelegate {
     }
     
     private func addHandlers() {
+        viewModel.searchGifsArray.subscribe(onNext: { [weak self] value in
+            self?.searchGifsCollectionView.reloadData()
+        }).disposed(by: bag)
         self.searchGifsCollectionView.refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
     }
     
