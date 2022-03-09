@@ -21,7 +21,7 @@ final class SearchViewModel {
         fetchGifs(searchQuery: "", offset: 0)
     }
     
-    func cleanApp() {
+    func cleanUp() {
         searchGifsArray.accept([])
         newAndOldGifs.removeAll()
     }

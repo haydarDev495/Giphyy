@@ -20,12 +20,7 @@ class PopularVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
         addHandlers()
-    }
-    
-    private func setupUI() {
-        
     }
     
     private func addHandlers() {

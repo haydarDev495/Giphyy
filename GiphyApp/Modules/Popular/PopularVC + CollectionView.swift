@@ -20,7 +20,7 @@ extension PopularVC : UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        onForwardFlow.accept(.details(string: viewModel.popularGifsArray.value[indexPath.row]))
+        onForwardFlow.accept(.details(imageUrl: viewModel.popularGifsArray.value[indexPath.row]))
     }
 }
 

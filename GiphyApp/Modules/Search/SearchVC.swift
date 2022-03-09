@@ -36,11 +36,10 @@ class SearchVC: UIViewController, SearchDelegate {
         viewModel.searchGifsArray.subscribe(onNext: { [weak self] value in
             self?.searchGifsCollectionView.reloadData()
         }).disposed(by: bag)
-        self.searchGifsCollectionView.refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
-    }
-    
-    @objc func refreshData() {
-        viewModel.fetchGifs(searchQuery: "", offset: 0, refresh: true)
+        
+        self.searchGifsCollectionView.refreshControl?.rx.controlEvent(UIControl.Event.valueChanged).subscribe(onNext: { [weak self] in
+            self?.viewModel.fetchGifs(searchQuery: "", offset: 0, refresh: true)
+        }).disposed(by: bag)
     }
     
     func updateUI() {

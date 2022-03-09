@@ -12,7 +12,7 @@ import RxCocoa
 
 enum PopularFlow {
     case popular
-    case details(string: String)
+    case details(imageUrl: String)
 }
 
 final class PopularFlowController: FlowController, GifDetailsVCDelegate {
@@ -46,8 +46,8 @@ final class PopularFlowController: FlowController, GifDetailsVCDelegate {
         switch flow {
         case .popular:
             self.start()
-        case .details(let string):
-            self.showGifDetailsVC(imageUrl: string)
+        case .details(let imageUrl):
+            self.showGifDetailsVC(imageUrl: imageUrl)
         }
     }
 }

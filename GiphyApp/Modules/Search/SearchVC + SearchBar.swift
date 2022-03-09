@@ -19,9 +19,9 @@ extension SearchVC : UISearchBarDelegate {
         timer.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false, block: { [self] timer in
             if searchText.isEmpty {
-                viewModel.cleanApp()
+                viewModel.cleanUp()
             } else {
-                self.viewModel.fetchGifs(searchQuery: searchText, offset: 0)
+                viewModel.fetchGifs(searchQuery: searchText, offset: 0)
             }
         })
         self.searchGifsCollectionView.reloadData()
