@@ -18,10 +18,6 @@ extension PopularVC : UICollectionViewDataSource {
         cell.configure(imageUrl: viewModel.popularGifsArray.value[indexPath.row])
         return cell
     }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        onForwardFlow.accept(.details(imageUrl: viewModel.popularGifsArray.value[indexPath.row]))
-    }
 }
 
 extension PopularVC : UICollectionViewDelegate , UICollectionViewDelegateFlowLayout {

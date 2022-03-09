@@ -22,11 +22,15 @@ class PopularVC: UIViewController {
         super.viewDidLoad()
         addHandlers()
     }
-    
+        
     private func addHandlers() {
         viewModel.popularGifsArray
             .subscribe(onNext: { [weak self] value in
                 self?.popularGifsCollectionView.reloadData()
             }).disposed(by: bag)
+        
+        self.popularGifsCollectionView.rx.itemSelected.subscribe(onNext:{ indexPath in
+            self.onForwardFlow.accept(.details(imageUrl: self.viewModel.popularGifsArray.value[indexPath.row]))
+        }).disposed(by: bag)
     }
 }
